@@ -54,7 +54,11 @@ const Game = () => {
   };
 
   const handleChange = (e) => {
-    setMinutes(e.target.value);
+    if (e.target.value > 60) {
+      setMinutes(60);
+    } else {
+      setMinutes(e.target.value);
+    }
   };
 
   return (
@@ -64,7 +68,8 @@ const Game = () => {
         <div className="flex justify-between items-center">
           <input
             type="number"
-            disabled={isActive}
+            value={minutes}
+            disabled={isActive && (seconds > 0 || minutes > 0)}
             onChange={handleChange}
             placeholder="Set minutes"
             className="input input-bordered w-full min-w-[130px]"
@@ -75,7 +80,7 @@ const Game = () => {
           <button
             className="btn border-2 border-slate-600 w-1/2"
             onClick={handleSet}
-            disabled={isActive}
+            disabled={isActive && (seconds > 0 || minutes > 0)}
           >
             Set
           </button>
