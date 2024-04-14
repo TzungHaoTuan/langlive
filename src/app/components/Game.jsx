@@ -58,7 +58,7 @@ const Game = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row w-full px-10 sm:px-28 md:px-40 lg:px-60 py-20 justify-between">
+    <div className="flex flex-col lg:flex-row w-full px-16 sm:px-28  lg:px-60 py-20 justify-between">
       <div className="flex flex-col">
         <div className="text-2xl mb-10">Time Setting:</div>
         <div className="flex justify-between items-center">
